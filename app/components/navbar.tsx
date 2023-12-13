@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import styles from './navbar.module.css'
+import Image from 'next/image'
 
 
 
@@ -17,12 +18,26 @@ export default function NavBar() {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                <Link className="navbar-item" href="/">
-                    <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"></img>
-                </Link>
+                {/* <Link className="navbar-item" href="/"> */}
+                    {/* <img src="https://bulma.io/images/bulma-logo.png" width="" height=""></img> */}
+                  
+                {/* </Link> */}
 
+            <a href='/' style={{padding:0, objectFit:'cover', height: 65}}>
+                <Image
+
+                            src="/logo.jpg"
+                            alt="Vercel Logo"
+                            className={styles.vercelLogo}
+                            style={{padding:0}}
+                            objectFit='cover'
+                            width={64}
+                            height={200}
+                            priority
+                        />
+            </a>
                 {/* <a className="navbar-item" href="https://bulma.io">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"></img>
     </a> */}
@@ -40,44 +55,47 @@ export default function NavBar() {
             </div>
 
             <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active' : ''}`} >
-                <div className="navbar-start" style={{flexGrow: 1, justifyContent: 'center'}}>
-                    <Link className="navbar-item" href="/">Home</Link>
-                    <Link className="navbar-item" href="/team">Team</Link>
-                    <Link className="navbar-item" href="/events">Events</Link>
-                    <Link className="navbar-item" href="/about">About</Link>
+                <div className="navbar-start" style={{ flexGrow: 1, justifyContent: 'center' }}>
+                    <Link className="navbar-item" href="/" onClick={() => setIsActive(false)}>Home</Link>
+                    <Link className="navbar-item" href="/events" onClick={() => setIsActive(false)}>Events</Link>
+
 
                     <div className="navbar-item has-dropdown is-hoverable " id={styles.navbarItem}>
                         <a className="navbar-link">
                             Classes
                         </a>
+                        
 
                         <div className="navbar-dropdown ">
-                            <a className="navbar-item">
-                                General Info
-                            </a>
-                            <a className="navbar-item">
-                                Class Schedule
-                            </a>
-                            <a className="navbar-item">
-                                Locations
-                            </a>
+                    <Link className="navbar-item" href="/classes" onClick={() => setIsActive(false)}>General Info</Link>
+                    <Link className="navbar-item" href="/classes/schedule" onClick={() => setIsActive(false)}>Class Schedule</Link>
+                    <Link className="navbar-item" href="/classes/locations" onClick={() => setIsActive(false)}>Locations</Link>
+
+                          
+
+
                             {/* <hr className="navbar-divider"/>
           <a className="navbar-item">
             Report an issue
           </a> */}
                         </div>
                     </div>
+
+                    <Link className="navbar-item" href="/team" onClick={() => setIsActive(false)}>Team</Link>
+                    <Link className="navbar-item" href="/about" onClick={() => setIsActive(false)}>About</Link>
+
+
                 </div>
 
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
                             <a className="button is-primary">
-                                <strong>Sign up</strong>
+                                <strong>Parent Portal</strong>
                             </a>
-                            <a className="button is-light">
+                            {/* <a className="button is-light">
                                 Log in
-                            </a>
+                            </a> */}
                         </div>
                     </div>
                 </div>

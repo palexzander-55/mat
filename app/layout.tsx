@@ -6,6 +6,7 @@ import 'bulma/css/bulma.min.css';
 
 import NavBar from './components/navbar'
 import Footer from './components/footer'
+import Carousel from './components/swiper';
 
 
 
@@ -22,12 +23,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <NavBar/>
-        {children}
-        <Footer/>
-        </body>
+    <html className="has-navbar-fixed-top"  lang="en"><body className={inter.className}>
+      <NavBar />
+      {children}
+      <Footer />
+    </body>
     </html>
   )
 }
