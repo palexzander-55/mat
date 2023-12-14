@@ -118,10 +118,11 @@ export default function Carousel() {
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
-                loop={true}
+                loop={false}
                 spaceBetween={10}
                 slidesPerView={4}
                 freeMode={true}
+                navigation={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper"
