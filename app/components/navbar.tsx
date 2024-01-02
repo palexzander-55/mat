@@ -90,7 +90,7 @@ export default function NavBar() {
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
-                            <a className="button is-primary">
+                            <a className="button is-primary" href='https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=551569'>
                                 <strong>Parent Portal</strong>
                             </a>
                             {/* <a className="button is-light">
