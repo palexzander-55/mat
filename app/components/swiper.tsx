@@ -15,6 +15,7 @@ import Image from 'next/image';
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import LocationCard from './location_card';
 
 export default function Carousel() {
     const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
@@ -36,81 +37,13 @@ export default function Carousel() {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper2"
             >
-                <SwiperSlide className={style.swiperSlide} >
-                    <div className='box has-background-dark'>
-                        <div className='columns'>
-                            <div className='column is-6 '>
-
-                                <h1 style={{ fontSize: 42 }}>Cloquet High School</h1>
-
-                                {/* <div style={{ width: 500 }}>
-                                    <Image
-                                        src="/cloquet_high_school.png"
-                                        alt="Vercel Logo"
-                                        // className={styles.vercelLogo}
-                                        // fill={true}
-                                        style={{ maxWidth: '1000px', maxHeight: '500px', objectFit: 'fill' }}
-                                        // width={800}
-                                        // height={400}
-                                        fill={true}
-                                        // objectFit='fill'
-                                        priority
-                                    />
-                                </div> */}
-
-
-                                <figure className="image is-16by9">
-                                    <img src="/cloquet_high_school.png" />
-                                </figure>
-
-                            </div>
-
-
-                            <div className='column is-6'>
-
-                                <div className='box'>
-                                    {/* <p style={{position: 'fixed', width:'100%', height:'100%', alignItems:'start', display:'flex', justifyContent:'right'}}> */}
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quidem suscipit impedit enim pariatur voluptatum provident. Non doloremque vitae illum provident eos, nostrum illo laudantium temporibus voluptate earum quod deserunt?
-                                    {/* </p> */}
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
+                <SwiperSlide className={style.locSwiperSlide} >
+                    <LocationCard locationName='Cloquet High School' mapImgUrl='/cloquet_high_school.png' ></LocationCard>
                 </SwiperSlide>
-                {/* <SwiperSlide className={style.swiperSlide}>
-
+                <SwiperSlide className={style.locSwiperSlide}>
+                    <LocationCard locationName='Duluth High School' mapImgUrl='/logo.jpg' ></LocationCard>
                 </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                </SwiperSlide>
+                {/* 
                 <SwiperSlide className={style.swiperSlide}>
 
                     <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
@@ -130,9 +63,14 @@ export default function Carousel() {
                     // height: 400,
                 }}
             >
-                <SwiperSlide className={style.swiperSlide}>
-                    <h1 style={{ position: 'absolute', width: '100%', height: '100%', alignItems: 'center', display: 'flex', justifyContent: 'center', fontSize: 42 }}>Cloquet</h1>
-                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                <SwiperSlide className={style.swiperSlide} >
+                    <h1 style={{ position: 'absolute', width: '100%', height: '100%', alignItems: 'center', display: 'flex', justifyContent: 'center', fontSize: 42, }}>Cloquet</h1>
+                    <div className={style.swiperOverlay}>
+                        <a className="button" href=''>
+                            <strong>Visit our Facebook</strong>
+                        </a>
+                    </div>
+                    <img id='mediaImage' src="https://swiperjs.com/demos/images/nature-1.jpg" />
                 </SwiperSlide>
                 <SwiperSlide className={style.swiperSlide}>
 

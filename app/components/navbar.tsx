@@ -18,26 +18,26 @@ export default function NavBar() {
     const [isActive, setIsActive] = useState(false);
 
     return (
-        <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav className="navbar is-fixed-top is-primary" style={{backgroundColor: '#55A8DC'}}  role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 {/* <Link className="navbar-item" href="/"> */}
-                    {/* <img src="https://bulma.io/images/bulma-logo.png" width="" height=""></img> */}
-                  
+                {/* <img src="https://bulma.io/images/bulma-logo.png" width="" height=""></img> */}
+
                 {/* </Link> */}
 
-            <a href='/' style={{padding:0, objectFit:'cover', height: 65}}>
-                <Image
+                <a href='/' style={{ padding: 0, objectFit: 'cover', height: 65 }}>
+                    <Image
 
-                            src="/logo.jpg"
-                            alt="Vercel Logo"
-                            className={styles.vercelLogo}
-                            style={{padding:0}}
-                            objectFit='cover'
-                            width={64}
-                            height={200}
-                            priority
-                        />
-            </a>
+                        src="/logo.jpg"
+                        alt="Vercel Logo"
+                        className={styles.vercelLogo}
+                        style={{ padding: 0 }}
+                        objectFit='cover'
+                        width={64}
+                        height={200}
+                        priority
+                    />
+                </a>
                 {/* <a className="navbar-item" href="https://bulma.io">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"></img>
     </a> */}
@@ -60,18 +60,38 @@ export default function NavBar() {
                     <Link className="navbar-item" href="/events" onClick={() => setIsActive(false)}>Events</Link>
 
 
-                    <div className="navbar-item has-dropdown is-hoverable " id={styles.navbarItem}>
-                        <a className="navbar-link">
-                            Classes
-                        </a>
-                        
+                    <div className='navbar-item has-dropdown is-hidden-touch'>
+                        <div className="dropdown is-hoverable">
+                            <div className="navbar-link">
+                                <Link href="/classes" style={{color:'white'}} onClick={() => setIsActive(false)}>
+                                    Classes
+                                </Link>
+                            </div>
+                            <div className="dropdown-menu " id="dropdown-menu" role="menu">
+                                <div className="dropdown-content">
+                                    <Link id={styles.navbarItem} className="navbar-item"  href="/classes" onClick={() => setIsActive(false)}>General Info</Link>
+                                    <Link className="navbar-item" href="/classes/schedule" onClick={() => setIsActive(false)}>Class Schedule</Link>
+                                    <Link className="navbar-item" href="/classes/locations" onClick={() => setIsActive(false)}>Locations</Link>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="navbar-item has-dropdown is-hoverable is-hidden-desktop" id={styles.navbarItem}>
+                        <div className="navbar-link">
+                            <Link href="/classes" onClick={() => setIsActive(false)}>
+                                Classes
+                            </Link>
+                        </div>
+
 
                         <div className="navbar-dropdown ">
-                    <Link className="navbar-item" href="/classes" onClick={() => setIsActive(false)}>General Info</Link>
-                    <Link className="navbar-item" href="/classes/schedule" onClick={() => setIsActive(false)}>Class Schedule</Link>
-                    <Link className="navbar-item" href="/classes/locations" onClick={() => setIsActive(false)}>Locations</Link>
+                            <Link className="navbar-item" href="/classes" onClick={() => setIsActive(false)}>General Info</Link>
+                            <Link className="navbar-item" href="/classes/schedule" onClick={() => setIsActive(false)}>Class Schedule</Link>
+                            <Link className="navbar-item" href="/classes/locations" onClick={() => setIsActive(false)}>Locations</Link>
 
-                          
+
 
 
                             {/* <hr className="navbar-divider"/>
@@ -87,6 +107,8 @@ export default function NavBar() {
 
                 </div>
 
+
+
                 <div className="navbar-end">
                     <div className="navbar-item">
                         <div className="buttons">
@@ -100,7 +122,7 @@ export default function NavBar() {
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav >
     );
 }
 

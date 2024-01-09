@@ -17,10 +17,35 @@
         margin-right: auto;
     } */
     .swiperSlide {
-        /* width: 100%; */
+      /* width: 100%; */
     }
 
-/* .swiper-pagination-bullet-active{
+    .locSwiperSlide {
+      /* width: 100%; */
+    }
+ 
+    .swiperSlide:hover h1  {
+      visibility: hidden;
+    }
+
+
+
+    .swiperOverlay {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.0;
+    }
+
+    .swiperOverlay:hover  {
+      opacity: 1.0;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+
+    /* .swiper-pagination-bullet-active{
   background-color:#fff;
 }
 

@@ -18,58 +18,73 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
+import NavBar from './components/navbar';
+import ContactForm from './components/contact_form';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      {/* <NavBar /> */}
+
       {/* <div className='section'>
         <h1>Minnesota Academy of Tumbling</h1>
       </div> */}
 
-      
-        <section className='section is-large' style={{ position: 'absolute', width: '100%', height: '100%',  fontSize: 42, zIndex: 1 }}>
-          <h1 className='title is-1 is-flex is-align-items-center is-justify-content-center'>Welcome to the Minnesota Academy of Tumbling</h1>
-          <h2 className='subtitle is-2 is-flex is-align-items-center is-justify-content-center'>A place to learn about tumbling</h2>
-        </section>
-          <Swiper
-            spaceBetween={300}
-            speed={2500}
-            centeredSlides={true}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            style={{ zIndex: 0 }}
-            effect={'fade'}
-            modules={[EffectFade, Navigation, Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            <SwiperSlide >
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" style={{ height: '100%', width: '100%' }} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" style={{ height: '100%', width: '100%' }} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" style={{ height: '100%', width: '100%' }} />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" style={{ height: '100%', width: '100%' }} />
-            </SwiperSlide>
-            {/* <span slot="container-start">Container Start</span>
+
+      <section className='section is-large' style={{ position: 'absolute', width: '100%', height: '100%', fontSize: 42, zIndex: 1 }}>
+        <h1 className='title is-1 is-flex is-align-items-center is-justify-content-center'>Welcome to the Minnesota Academy of Tumbling</h1>
+        <h2 className='subtitle is-2 is-flex is-align-items-center is-justify-content-center'>A place to learn about tumbling</h2>
+      </section>
+
+
+      <Swiper
+        spaceBetween={300}
+        speed={2500}
+        centeredSlides={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        style={{ zIndex: 0, height: '85vh' }}
+        effect={'fade'}
+        modules={[EffectFade, Navigation, Pagination, Autoplay]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" style={{
+            height: '100%', width: '100%',
+          }} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" style={{ height: '100%', width: '100%' }} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" style={{ height: '100%', width: '100%' }} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" style={{ height: '100%', width: '100%' }} />
+        </SwiperSlide>
+        {/* <span slot="container-start">Container Start</span>
   <span slot="container-end">Container End</span>
   <span slot="wrapper-start">Wrapper Start</span>
   <span slot="wrapper-end">Wrapper End</span> */}
-          </Swiper>
+      </Swiper>
 
-      <section className="hero is-link">
+      <section className="hero is-small is-info" >
         <div className="hero-body">
-          <p className="title">
-            Buy tickets to our Spring Performance now!
-          </p>
-          <a className="button is-primary" href=''>
-            <strong>Buy Tickets</strong>
-          </a>
+          <div className="container">
+            <div className="columns is-vcentered ">
+              <div className='column is-9 '>
+                <p className="title">
+                  Buy tickets to our Spring Performance now!
+                </p>
+              </div>
+              <div className='column is-2 has-text-right'>
+                <Link style={{ zIndex: 2 }} className="button is-primary  is-large is-responsive is-rounded" href="/classes/locations/cloquet" > <strong>Buy Tickets</strong></Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -85,10 +100,14 @@ export default function Home() {
         </div>
 
         <div className='column is-6'>
-          <div className='section is-medium has-background-warning ' style={{ height: '100%' }}>
-            <h1 className='title is-1 is-size-3-mobile'>Welcome to the Minnesota Academy of Tumbling</h1>
-            <h2 className='subtitle is-2 is-size-5-mobile'>A place to learn about tumbling</h2>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui officia praesentium, sunt ullam neque dicta molestias distinctio maiores aspernatur tempora blanditiis consequuntur sed? Neque beatae repudiandae qui magnam necessitatibus? Ducimus?
+          <div className='section is-medium has-background-warning' style={{ height: '100%' }}>
+            <h1 className='title is-1 is-size-3-mobile'>Tumbling Classes</h1>
+            <p>
+              We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
+            </p>
+            <a href="/classes/schedule">
+            <button className='button is-primary is-large is-responsive align-self-centered'>Class Schedule</button>
+            </a>
           </div>
         </div>
 
@@ -132,11 +151,8 @@ export default function Home() {
       </div>
 
 
-      <h1 className='title is-1 is-size-3-mobile has-text-centered has-text-weight-bold' style={{ color: 'white' }}>Locations:</h1>
+      <h1 className='title is-1 is-size-3-mobile has-text-centered has-text-weight-bold' style={{}}>Locations:</h1>
       <Carousel />
-
-
-
     </main>
   )
 }

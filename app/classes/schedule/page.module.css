@@ -1,0 +1,10 @@
+.scheduleIframe {
+    height: 164px;
+}
+
+@media (max-width: 474px){
+    .scheduleIframe {
+        height: 350px;
+    } 
+}
+

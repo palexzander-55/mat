@@ -1,0 +1,6 @@
+@media(max-width: 767px) {
+    .customColumns {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
