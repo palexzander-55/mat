@@ -31,6 +31,8 @@ export default function Home() {
         <h1>Minnesota Academy of Tumbling</h1>
       </div> */}
 
+         
+
 
       <section className='section is-large' style={{ position: 'absolute', width: '100%', height: '100%', fontSize: 42, zIndex: 1 }}>
         <h1 className='title is-1 is-flex is-align-items-center is-justify-content-center'>Welcome to the Minnesota Academy of Tumbling</h1>
@@ -71,7 +73,7 @@ export default function Home() {
   <span slot="wrapper-end">Wrapper End</span> */}
       </Swiper>
 
-      <section className="hero is-small is-info" >
+      <section className="hero is-small is-info" style={{backgroundColor:'#55A8DD'}} >
         <div className="hero-body">
           <div className="container">
             <div className="columns is-vcentered ">
@@ -100,16 +102,44 @@ export default function Home() {
         </div>
 
         <div className='column is-6'>
-          <div className='section is-medium has-background-warning' style={{ height: '100%' }}>
-            <h1 className='title is-1 is-size-3-mobile'>Tumbling Classes</h1>
-            <p>
-              We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
-            </p>
-            <a href="/classes/schedule">
-            <button className='button is-primary is-large is-responsive align-self-centered'>Class Schedule</button>
-            </a>
+          <div className='section  has-background-warning' style={{ height: '100%' }}>
+            <div className="container is-fluid pb-6" style={{height:'100%'}}>
+              <h1 className='title is-1 is-size-3-mobile'>Tumbling Classes</h1>
+              <p className='pb-6 is-size-4-desktop has-text-grey'>
+                We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
+                We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
+              </p>
+              <a href="/classes/schedule">
+                <button id={styles.buttonNav} className='button is-large  mt-5' style={{ position:'absolute', left:0, bottom:0, right:0, backgroundColor:''}}>Class Schedule</button>
+              </a>
+            </div>
           </div>
         </div>
+
+
+  
+{/* 
+        <div className='column is-6'>
+          <div className='section has-background-warning' style={{ height: '100%' }}>
+            <div className="container is-fluid" style={{ height: '100%' }}>
+              <h1 className='title is-1 is-size-3-mobile'>Tumbling Classes</h1>
+              <p className='is-size-4-desktop has-text-grey'>
+                We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
+                We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
+              </p>
+              <div className="columns mt-5">
+                <div className="column is-half is-hidden-touch">
+                </div>
+                <div className="column is-half has-text-centered">
+                  <a href="/classes/schedule">
+                    <button className='button is-primary is-large  ' >Class Schedule</button>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div> */}
 
         <div className='column is-6 is-hidden-tablet' >
           <figure className="is-flex is-align-items-center is-justify-content-center image is-5by3">

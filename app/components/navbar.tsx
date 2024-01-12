@@ -18,31 +18,27 @@ export default function NavBar() {
     const [isActive, setIsActive] = useState(false);
 
     return (
-    <nav className="navbar is-fixed-top is-primary" style={{backgroundColor: '#55A8DC'}}  role="navigation" aria-label="main navigation">
+
+  <nav className="navbar is-fixed-top is-primary" style={{background: 'linear-gradient(45deg, #55A8DD 20%, #BBBBBB  51%, teal  100%)' }}  role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 {/* <Link className="navbar-item" href="/"> */}
                 {/* <img src="https://bulma.io/images/bulma-logo.png" width="" height=""></img> */}
 
                 {/* </Link> */}
 
-                <a href='/' style={{ padding: 0, objectFit: 'cover', height: 65 }}>
-                    <Image
-
-                        src="/logo.jpg"
-                        alt="Vercel Logo"
-                        className={styles.vercelLogo}
-                        style={{ padding: 0 }}
-                        objectFit='cover'
-                        width={64}
-                        height={200}
-                        priority
+                <a href='/' style={{ padding:0,width:250, height:65, marginLeft:'10px' }}>
+                <img
+                        src="/logo-horizontal-transparent.png"
+                       
+                        style={{padding:0,width:250, height:65,  }}
+                        
                     />
                 </a>
                 {/* <a className="navbar-item" href="https://bulma.io">
       <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"></img>
     </a> */}
 
-                <a role="button"
+                <a role="button "
                     className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
                     aria-label="menu"
                     aria-expanded="false"
@@ -53,6 +49,7 @@ export default function NavBar() {
                     <span aria-hidden="true"></span>
                 </a>
             </div>
+
 
             <div id="navbarBasicExample" className={`navbar-menu ${isActive ? 'is-active' : ''}`} >
                 <div className="navbar-start" style={{ flexGrow: 1, justifyContent: 'center' }}>
@@ -109,7 +106,7 @@ export default function NavBar() {
 
 
 
-                <div className="navbar-end">
+                <div className="navbar-end" style={{width:250}}>
                     <div className="navbar-item">
                         <div className="buttons">
                             <a className="button is-primary" href='https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=551569'>
