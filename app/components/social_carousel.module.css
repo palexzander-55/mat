@@ -1,0 +1,80 @@
+.swiperOverlay {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    animation-name: slideout;
+    animation-duration: 300ms;
+}
+
+.swiperSlide:hover .swiperOverlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    animation-name: slidein3;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+}
+
+#visitUsButton {
+}
+
+#button {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.swiperSlide:hover #button {
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .swiperOverlay {
+        height: 0px;
+        animation-name: slideoutmobile;
+        animation-duration: 300ms;
+    }
+}
+
+/* Define the keyframes for the animation */
+@keyframes slidein3 {
+
+    /* Start from the bottom of the parent element */
+    from {
+        transform: translateY(0);
+    }
+
+    /* End at the top of the parent element */
+    to {
+        height: 100%;
+
+    }
+}
+
+/* Define the keyframes for the animation */
+@keyframes slideout {
+
+    /* Start from the bottom of the parent element */
+    from {
+        height: 100%;
+    }
+
+    /* End at the top of the parent element */
+    to {
+        height: 50px;
+    }
+}
+
+/* Define the keyframes for the animation */
+@keyframes slideoutmobile {
+
+    /* Start from the bottom of the parent element */
+    from {
+        height: 100%;
+    }
+
+    /* End at the top of the parent element */
+    to {
+        height: 0px;
+    }
+}

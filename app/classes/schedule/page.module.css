@@ -2,9 +2,67 @@
     height: 164px;
 }
 
-@media (max-width: 474px){
+@media (max-width: 474px) {
     .scheduleIframe {
         height: 350px;
-    } 
+    }
 }
 
+/* Define a keyframe animation that fades in the element */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply the animation to the h1 and iframe elements */
+#scheduleIframe {
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Adjust the animation delay for each element based on the day */
+#scheduleIframe[data-day="Monday"],
+iframe[data-day="Monday"] {
+    animation-delay: 0s;
+}
+
+#scheduleIframe[data-day="Tuesday"],
+iframe[data-day="Tuesday"] {
+    animation-delay: 0.2s;
+}
+
+#scheduleIframe[data-day="Wednesday"],
+iframe[data-day="Wednesday"] {
+    animation-delay: 0.4s;
+}
+
+#scheduleIframe[data-day="Thursday"],
+iframe[data-day="Thursday"] {
+    animation-delay: 0.6s;
+}
+
+#scheduleIframe[data-day="Friday"],
+iframe[data-day="Friday"] {
+    animation-delay: 0.8s;
+}
+
+#scheduleIframe[data-day="Saturday"],
+iframe[data-day="Saturday"] {
+    animation-delay: 1.0s;
+}
+
+#scheduleIframe[data-day="Sunday"] {
+    animation-delay: 1.2s;
+}
+
+/* Make the iframe fade in slower than the h1 */
+iframe {
+    animation-duration: 2s;
+}

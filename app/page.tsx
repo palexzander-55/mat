@@ -3,26 +3,39 @@
 
 import Image from 'next/image'
 import styles from './page.module.css'
-import Carousel from './components/swiper'
+import LocationCarousel from './components/location_carousel'
 
 
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-// import required modules
-import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
-import NavBar from './components/navbar';
-import ContactForm from './components/contact_form';
 import Link from 'next/link';
+import SocialCarousel from './components/social_carousel';
+import FadeCarousel from './components/fade_carousel';
 
 export default function Home() {
+  // function navColumn({ imgUrl, title, content }: { imgUrl: string }) {
+  //   return (
+
+  //   );
+  // }
+
+  function contentColumn({ title, content, buttonText }: { title: string, content: string, buttonText: string }) {
+    return (
+      <div className='column is-6'>
+        <div className='section  has-background-warning' style={{ height: '100%' }}>
+          <div className="container is-fluid pb-6" style={{ height: '100%' }}>
+            <h1 className='title is-1 is-size-3-mobile'>{title}</h1>
+            <p className='pb-6 is-size-4-desktop has-text-grey'>
+              {content}
+            </p>
+            <a href="/classes/schedule">
+              <button id={styles.buttonNav} className='button is-large  mt-5' style={{ position: 'absolute', left: 0, bottom: 0, right: 0, backgroundColor: '' }}>{buttonText}</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <main className={styles.main}>
       {/* <NavBar /> */}
@@ -31,49 +44,20 @@ export default function Home() {
         <h1>Minnesota Academy of Tumbling</h1>
       </div> */}
 
-         
+      <div className='is-flex is-flex-direction-column is-align-items-center is-justify-content-center' style={{ position: 'absolute', width: '100%', height: '85vh', fontSize: 42, zIndex: 1 }}>
+        {/* <h1 className='title is-1 has-text-primary'>Welcome to the Minnesota Academy of Tumbling</h1> */}
+        {/* <h2 className='subtitle is-2 has-text-primary'>A place to learn about tumbling</h2> */}
+        <img src="/logo-transparent.png" style={{ height: '50%', width: '100%', objectFit: 'contain' }} />
+
+        {/* <figure className="image " style={{ position: 'absolute', width: '100%', height: '85vh', fontSize: 42, zIndex: 1 }} >
+            <img src="/logo-transparent.png" />
+          </figure> */}
+      </div>
 
 
-      <section className='section is-large' style={{ position: 'absolute', width: '100%', height: '100%', fontSize: 42, zIndex: 1 }}>
-        <h1 className='title is-1 is-flex is-align-items-center is-justify-content-center'>Welcome to the Minnesota Academy of Tumbling</h1>
-        <h2 className='subtitle is-2 is-flex is-align-items-center is-justify-content-center'>A place to learn about tumbling</h2>
-      </section>
+      <FadeCarousel />
 
-
-      <Swiper
-        spaceBetween={300}
-        speed={2500}
-        centeredSlides={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        style={{ zIndex: 0, height: '85vh' }}
-        effect={'fade'}
-        modules={[EffectFade, Navigation, Pagination, Autoplay]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" style={{
-            height: '100%', width: '100%',
-          }} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" style={{ height: '100%', width: '100%' }} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" style={{ height: '100%', width: '100%' }} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" style={{ height: '100%', width: '100%' }} />
-        </SwiperSlide>
-        {/* <span slot="container-start">Container Start</span>
-  <span slot="container-end">Container End</span>
-  <span slot="wrapper-start">Wrapper Start</span>
-  <span slot="wrapper-end">Wrapper End</span> */}
-      </Swiper>
-
-      <section className="hero is-small is-info" style={{backgroundColor:'#55A8DD'}} >
+      <section className="hero is-small is-info" style={{ backgroundColor: '#55A8DD' }} >
         <div className="hero-body">
           <div className="container">
             <div className="columns is-vcentered ">
@@ -101,24 +85,26 @@ export default function Home() {
           {/* </div> */}
         </div>
 
-        <div className='column is-6'>
+        {contentColumn({ title: 'Tumbling Classes', content: 'We offer a variety of tumbling classes for all ages. Whether you\'re a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.', buttonText: 'Class Schedule' })}
+
+        {/* <div className='column is-6'>
           <div className='section  has-background-warning' style={{ height: '100%' }}>
-            <div className="container is-fluid pb-6" style={{height:'100%'}}>
+            <div className="container is-fluid pb-6" style={{ height: '100%' }}>
               <h1 className='title is-1 is-size-3-mobile'>Tumbling Classes</h1>
               <p className='pb-6 is-size-4-desktop has-text-grey'>
                 We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
                 We offer a variety of tumbling classes for all ages. Whether you're a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.
               </p>
               <a href="/classes/schedule">
-                <button id={styles.buttonNav} className='button is-large  mt-5' style={{ position:'absolute', left:0, bottom:0, right:0, backgroundColor:''}}>Class Schedule</button>
+                <button id={styles.buttonNav} className='button is-large  mt-5' style={{ position: 'absolute', left: 0, bottom: 0, right: 0, backgroundColor: '' }}>Class Schedule</button>
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
 
-  
-{/* 
+
+        {/* 
         <div className='column is-6'>
           <div className='section has-background-warning' style={{ height: '100%' }}>
             <div className="container is-fluid" style={{ height: '100%' }}>
@@ -147,13 +133,20 @@ export default function Home() {
           </figure>
         </div>
 
-        <div className='column is-6'>
+        {/* <div className='column is-6'>
           <div className='section is-medium has-background-warning ' style={{ height: '100%' }}>
             <h1 className='title is-1 is-size-3-mobile'>Welcome to the Minnesota Academy of Tumbling</h1>
             <h2 className='subtitle is-2 is-size-5-mobile'>A place to learn about tumbling</h2>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui officia praesentium, sunt ullam neque dicta molestias distinctio maiores aspernatur tempora blanditiis consequuntur sed? Neque beatae repudiandae qui magnam necessitatibus? Ducimus?
+
+            <a href="/classes/schedule">
+              <button id={styles.buttonNav} className='button is-large  mt-5' style={{ position: 'absolute', left: 0, bottom: 0, right: 0, backgroundColor: '' }}>Class Schedule</button>
+            </a>
           </div>
-        </div>
+        </div> */}
+
+        {contentColumn({ title: 'Team', content: 'We offer a variety of tumbling classes for all ages. Whether you\'re a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.', buttonText: 'About our Team' })}
+
 
         <div className='column is-6 is-hidden-mobile' >
           <figure className="is-flex is-align-items-center is-justify-content-center image is-5by3">
@@ -171,21 +164,37 @@ export default function Home() {
           {/* </div> */}
         </div>
 
-        <div className='column is-6'>
+        {contentColumn({ title: 'Events', content: 'We offer a variety of tumbling classes for all ages. Whether you\'re a beginner or an experienced tumbler, our classes are designed to help you learn the basics of tumbling and improve your skills.', buttonText: 'View Upcoming Events' })}
+      </div>
+
+      {/* <div className='column is-6'>
           <div className='section is-medium has-background-warning ' style={{ height: '100%' }}>
             <h1 className='title is-1 is-size-3-mobile'>Welcome to the Minnesota Academy of Tumbling</h1>
             <h2 className='subtitle is-2 is-size-5-mobile'>A place to learn about tumbling</h2>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui officia praesentium, sunt ullam neque dicta molestias distinctio maiores aspernatur tempora blanditiis consequuntur sed? Neque beatae repudiandae qui magnam necessitatibus? Ducimus?
           </div>
         </div>
-      </div>
+      </div> */}
+
+
 
 
       <h1 className='title is-1 is-size-3-mobile has-text-centered has-text-weight-bold' style={{}}>Locations:</h1>
-      <Carousel />
+      <LocationCarousel />
+      <SocialCarousel />
     </main>
   )
 }
+
+
+
+
+
+
+
+
+
+
 
 {/* <div className={styles.description}>
 <p>

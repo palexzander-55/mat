@@ -1,5 +1,8 @@
+'use client'
+
 import Link from "next/link";
 import FAQ, { FaqProps } from "../components/faq";
+import ModalForm from "../components/modal_form";
 
 const questions: FaqProps = {
   questions: [
@@ -9,6 +12,10 @@ const questions: FaqProps = {
 };
 
 export default function Classes() {
+  function openPrivatesModal(){
+    document.getElementById('modal-js-example')?.classList.add('is-active');
+  }
+
   return (
     <main>
       <div className="container px-2">
@@ -37,7 +44,23 @@ export default function Classes() {
 
 
       </div>
+      <section className="hero is-small is-info" style={{ backgroundColor: '#55A8DD' }} >
+        <div className="hero-body">
+            <div className="columns is-vcentered ">
+              <div className='column is-6 has-text-centered'>
+                <p className="title">
+                  Limited Privates Available!
+                </p>
+              </div>
+              <div className='column is-6 has-text-centered'>
+                <Link className="button is-primary  is-large is-responsive is-rounded" href="/classes/locations/cloquet" > <strong>Request Privates</strong></Link>
+              </div>
+            </div>
+        </div>
+      </section>
+
       <FAQ faqProp={questions} />
+      <ModalForm title="Request privates by filling out the form below:" />
 
     </main>
   );

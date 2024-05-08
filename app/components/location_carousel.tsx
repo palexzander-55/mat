@@ -1,6 +1,6 @@
 'use client'
 
-import React, { CSSProperties, useRef, useState } from 'react';
+import React, { CSSProperties,  } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,15 +10,14 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-import style from './swiper.module.css'
-import Image from 'next/image';
+import style from './location_carousel.module.css'
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import LocationCard from './location_card';
 
-export default function Carousel() {
-    const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+export default function LocationCarousel() {
+    // const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
     return (
         <>
             <Swiper
@@ -33,7 +32,7 @@ export default function Carousel() {
                 loop={true}
                 spaceBetween={10}
                 navigation={true}
-                thumbs={{ swiper: thumbsSwiper }}
+                // thumbs={{ swiper: thumbsSwiper }}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="mySwiper2"
             >
@@ -48,66 +47,6 @@ export default function Carousel() {
 
                     <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
                 </SwiperSlide> */}
-            </Swiper>
-            <Swiper
-                onSwiper={setThumbsSwiper}
-                loop={false}
-                spaceBetween={10}
-                slidesPerView={4}
-                freeMode={true}
-                navigation={true}
-                watchSlidesProgress={true}
-                modules={[FreeMode, Navigation, Thumbs]}
-                className="mySwiper"
-                style={{
-                    // height: 400,
-                }}
-            >
-                <SwiperSlide className={style.swiperSlide} >
-                    <h1 style={{ position: 'absolute', width: '100%', height: '100%', alignItems: 'center', display: 'flex', justifyContent: 'center', fontSize: 42, }}>Cloquet</h1>
-                    <div className={style.swiperOverlay}>
-                        <a className="button" href=''>
-                            <strong>Visit our Facebook</strong>
-                        </a>
-                    </div>
-                    <img id='mediaImage' src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className={style.swiperSlide}>
-
-                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-                </SwiperSlide>
             </Swiper>
         </>
     );

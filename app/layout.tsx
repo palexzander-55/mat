@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html className="has-navbar-fixed-top" lang="en">
       <head>
-        {/* <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/flatly/bulmaswatch.min.css"></link> */}
+        {/* <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/solar/bulmaswatch.min.css"></link> */}
         <link href="https://cdn.jsdelivr.net/npm/@creativebulma/bulma-divider@1.1.0/dist/bulma-divider.min.css" rel="stylesheet" />
       
       </head>

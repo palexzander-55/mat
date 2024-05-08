@@ -2,11 +2,14 @@
 
 export default function LocationCard({ locationName, mapImgUrl }: { locationName: string, mapImgUrl: string }) {
     return (
-        <div className='box has-background-dark'>
+        <div className='box ' style={{backgroundColor:'teal'}}>
             <div className='columns'>
                 <div className='column is-6 '>
 
-                    <h1 style={{ fontSize: 42 }}>{locationName}</h1>
+                    {/* <h1 className="" style={{ fontSize: 42 }}>{locationName}</h1> */}
+
+                    <h1 className="title is-size-2-desktop pt-2 px-2 has-text-link-light" style={{}}>{locationName}</h1>
+
 
                     {/* <div style={{ width: 500 }}>
                     <Image

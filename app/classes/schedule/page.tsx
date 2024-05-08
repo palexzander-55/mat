@@ -9,9 +9,9 @@ import ModalForm from "@/app/components/modal_form";
 export default function Schedule() {
   function classScheduleByDay(day: string) {
     return (
-      <div className="has-text-centered">
-        <h1 className="title is-3 has-text-info-light mb-1 mt-3" >{day}</h1>
-        <iframe className={styles.scheduleIframe} style={{ border: 0, width: '100%', colorScheme:'dark' }} loading="lazy" allowFullScreen src={`https://app.jackrabbitclass.com/jr3.0/Openings/OpeningsDirect?OrgId=551569&ClassDays=${day}`}></iframe>
+      <div className="has-text-centered" id={styles.scheduleIframe} data-day={day}>
+        <h1 className="title is-3 has-text-primary mb-1 mt-3"  >{day}</h1>
+        <iframe className={styles.scheduleIframe} style={{ border: 0, width: '100%', colorScheme:'dark' }} loading="lazy" data-day={day} allowFullScreen src={`https://app.jackrabbitclass.com/jr3.0/Openings/OpeningsDirect?OrgId=551569&ClassDays=${day}`}></iframe>
       </div>
     );
   }
@@ -34,7 +34,7 @@ export default function Schedule() {
 
   return (
     <main>
-      <div className="container">
+      <div className="container pb-3">
         <h1 className="title is-1 pt-3" style={{ }}>Class Schedule</h1>
 
         {/* <Link className="navbar-item" href="/classes/locations/cloquet" >Cloquet</Link>
@@ -68,11 +68,11 @@ export default function Schedule() {
         {classScheduleByDay("Thursday")}
         {classScheduleByDay("Friday")}
         {classScheduleByDay("Saturday")}
-        <div className="has-text-centered">
-          <h1 className="title is-3 p-1" style={{ }}>Sunday</h1>
+        <div className="has-text-centered" id={styles.scheduleIframe} data-day="Sunday">
+          <h1 className="title is-3 has-text-primary mb-1 mt-3" style={{ }}>Sunday</h1>
           <div style={{ border: 0, width: '100%', height: '100%', backgroundColor:'white'}}>
-            <h1 className="title is-3 pt-3 " style={{ color: 'black' }}>No Class!</h1>
-            <p className="has-text-primary">Limited Privates Available</p>
+            <h1 className="title is-3 pt-4 ">No Class!</h1>
+            <p className="has-text-primary p-3 is-size-5">Limited Privates Available</p>
             <button className="button my-2  is-outlined is-link" onClick={openPrivatesModal}>Request Privates</button>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function ModalForm({title} : {title: string}) {
 
         <div className="modal-content">
           <div className="box">
-            <p>{title}</p>
+            <h3 className="title is-5 p-3 has-text-centered ">{title}</h3>
             <ContactForm onCloseModal={closePrivatesModal} />
           </div>
         </div>

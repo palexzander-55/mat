@@ -4,11 +4,11 @@ import Link from "next/link";
 export default function Locations() {
   return (
     <main>
-      <div className="container is-large">
+      <div className="container is-large pb-3">
         <h1 className="title is-1 pt-3" style={{ }}>Class Locations</h1>
 
         <div className="content">
-          <p>
+          <p className="is-size-5">
             The following locations are available for classes:
           </p>
         </div>

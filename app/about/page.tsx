@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 // import styles from './page.module.css'
-import Carousel from '../components/swiper';
+import LocationCarousel from '../components/location_carousel';
 // import FBPage from '../components/fb_page';
 import ContactForm from '../components/contact_form';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ export default function About() {
 
 
             <h3 className="title is-2 has-text-centered " >Locations:</h3>
-            <Carousel />
+            <LocationCarousel />
             <FAQ faqProp={questions}/>
         </main>
     );

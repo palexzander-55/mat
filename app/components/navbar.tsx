@@ -19,19 +19,19 @@ export default function NavBar() {
 
     return (
 
-  <nav className="navbar is-fixed-top is-primary" style={{background: 'linear-gradient(45deg, #55A8DD 20%, #BBBBBB  51%, teal  100%)' }}  role="navigation" aria-label="main navigation">
+        <nav className="navbar is-fixed-top is-primary" style={{ background: 'linear-gradient(45deg, #55A8DD 20%, #BBBBBB  51%, teal  100%)' }} role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 {/* <Link className="navbar-item" href="/"> */}
                 {/* <img src="https://bulma.io/images/bulma-logo.png" width="" height=""></img> */}
 
                 {/* </Link> */}
 
-                <a href='/' style={{ padding:0,width:250, height:65, marginLeft:'10px' }}>
-                <img
+                <a href='/' style={{ padding: 0, width: 250, height: 65, marginLeft: '10px' }}>
+                    <img
                         src="/logo-horizontal-transparent.png"
-                       
-                        style={{padding:0,width:250, height:65,  }}
-                        
+
+                        style={{ padding: 0, width: 250, height: 65, }}
+
                     />
                 </a>
                 {/* <a className="navbar-item" href="https://bulma.io">
@@ -56,24 +56,26 @@ export default function NavBar() {
                     <Link className="navbar-item" href="/" onClick={() => setIsActive(false)}>Home</Link>
                     <Link className="navbar-item" href="/events" onClick={() => setIsActive(false)}>Events</Link>
 
+                    <div className='navbar-item has-dropdown is-hidden-touch' >
 
-                    <div className='navbar-item has-dropdown is-hidden-touch'>
-                        <div className="dropdown is-hoverable">
-                            <div className="navbar-link">
-                                <Link href="/classes" style={{color:'white'}} onClick={() => setIsActive(false)}>
-                                    Classes
-                                </Link>
-                            </div>
-                            <div className="dropdown-menu " id="dropdown-menu" role="menu">
+                        <div className="dropdown is-hoverable" >
+
+                            <Link className='navbar-link' href="/classes" style={{ color: 'white', }} onClick={() => setIsActive(false)}>Classes </Link>
+
+
+                            <div className="dropdown-menu "  role="menu">
                                 <div className="dropdown-content">
-                                    <Link id={styles.navbarItem} className="navbar-item"  href="/classes" onClick={() => setIsActive(false)}>General Info</Link>
-                                    <Link className="navbar-item" href="/classes/schedule" onClick={() => setIsActive(false)}>Class Schedule</Link>
-                                    <Link className="navbar-item" href="/classes/locations" onClick={() => setIsActive(false)}>Locations</Link>
+                                    <Link id={styles.navbarItem} className="navbar-item" href="/classes" onClick={() => setIsActive(false)}>General Info</Link>
+                                    <Link id={styles.navbarItem} className="navbar-item" href="/classes/schedule" onClick={() => setIsActive(false)}>Class Schedule</Link>
+                                    <Link id={styles.navbarItem} className="navbar-item" href="/classes/locations" onClick={() => setIsActive(false)}>Locations</Link>
 
                                 </div>
                             </div>
+
                         </div>
+
                     </div>
+
 
                     <div className="navbar-item has-dropdown is-hoverable is-hidden-desktop" id={styles.navbarItem}>
                         <div className="navbar-link">
@@ -106,7 +108,7 @@ export default function NavBar() {
 
 
 
-                <div className="navbar-end" style={{width:250}}>
+                <div className="navbar-end" style={{ width: 250 }}>
                     <div className="navbar-item">
                         <div className="buttons">
                             <a className="button is-primary" href='https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgID=551569'>

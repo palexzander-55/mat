@@ -26,8 +26,14 @@
 } */
 
 #navbarItem:hover {
-    color: red;
+    color: rgb(5, 156, 131);
 }
+
+#navbarItem:focus {
+    color: rgb(12, 197, 157);
+}
+
+
 
 .vercelLogo {
 }
